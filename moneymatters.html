@@ -607,54 +607,13 @@
   updateStarBadge();
 
   // CHATBOT LOGIC
+  
+  
   const chatForm = document.getElementById('chat-form');
   const chatMessages = document.getElementById('chat-messages');
 
-  const tips = [
-    "Set clear savings goals and track them weekly.",
-    "Automate your savings to make it effortless.",
-    "Cut back on unnecessary subscriptions and services.",
-    "Cook meals at home instead of eating out.",
-    "Use cash envelopes for better spending control.",
-    "Review your budget monthly and adjust as needed.",
-    "Avoid impulse buys by waiting 24 hours before purchasing.",
-    "Increase your emergency fund gradually.",
-    "Look for free entertainment options in your area.",
-    "Shop during sales and use discounts wisely."
-  ];
 
-  function addMessage(text, sender='bot') {
-    const msg = document.createElement('div');
-    msg.classList.add('msg', sender);
-    msg.textContent = text;
-    chatMessages.appendChild(msg);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
-
-  chatForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const userInput = chatForm.elements['chat-input'].value.trim();
-    if (!userInput) return;
-    addMessage(userInput, 'user');
-    chatForm.reset();
-
-    // Simple keyword-based reply
-    let reply = "Hello! Here's a quick money-saving tip for you:";
-    const lowerInput = userInput.toLowerCase();
-    if(lowerInput.includes('save')) reply = tips[0];
-    else if(lowerInput.includes('automate')) reply = tips[1];
-    else if(lowerInput.includes('cut')) reply = tips[2];
-    else if(lowerInput.includes('cook')) reply = tips[3];
-    else if(lowerInput.includes('cash')) reply = tips[4];
-    else if(lowerInput.includes('budget')) reply = tips[5];
-    else if(lowerInput.includes('impulse')) reply = tips[6];
-    else if(lowerInput.includes('emergency')) reply = tips[7];
-    else if(lowerInput.includes('free')) reply = tips[8];
-    else if(lowerInput.includes('sale')) reply = tips[9];
-
-    addMessage(reply);
-  });
 </script>
-</body>
-</html>
 
+
+</html>
